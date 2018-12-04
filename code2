@@ -1,0 +1,17 @@
+wmortality = []
+bmortality = []
+
+for reports in list_of_report:
+    if ('White' in reports['Data']['Race']):
+        wmortality.append(reports['Data']['Event Type'])
+    if ('Black' in reports['Data']['Race']):
+        bmortality.append(reports['Data']['Event Type'])
+
+mortality = [wmortality, bmortality]
+race = ['White', 'Black']
+race_colors = ['blue', 'red']
+bar_locations = [0, 1]
+
+plt.bar(bar_locations, mortality, tick_label=race, color=race_colors, align='center')
+plt.title('Mortality Rates in White v. Black People')
+plt.show()
